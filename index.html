@@ -400,8 +400,10 @@
             const repo = 'AboutNix';
             var times = 0;
         
-            const urlJson = `https://githubusercontent.com{username}/${repo}/main/commits.json`;
+            const urlJson = `https://githubusercontent.com/${username}/${repo}/main/commits.json`;
             
+            console.log("O que voce esta fazendo aqui? tome isso como easter egg: https://youtu.be/iA9t8KXmB7g")
+
             fetch("markdown/about.md")
                 .then(response => response.text())
                 .then(text => {
