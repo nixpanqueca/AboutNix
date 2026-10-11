@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Code by NixPanqueca -w- -->
+<html>
+<head>
+    <title>Index of /assets</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
+    <link rel="icon" href="./favicon.png" type="image/png">
+    <style>
+        body {
+            background-image: url('./background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+        }
+        .window {
+            width: 600px;
+            max-width: 90vw;
+        }
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .file-list li {
+            padding: 4px 6px;
+        }
+        .file-list a {
+            color: black;
+            text-decoration: none;
+        }
+        .file-list a:hover {
+            color: white;
+            background: #1a5cc8;
+        }
+    </style>
+</head>
+<body>
+    <div class="window glass active">
+        <div class="title-bar">
+            <div class="title-bar-text">Index of /assets</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize" disabled></button>
+                <button aria-label="Maximize" disabled></button>
+                <button aria-label="Close" disabled></button>
+            </div>
+        </div>
+        <div class="window-body has-space">
+            <p><a href="../">../ (parent)</a></p>
+            <ul class="tree-view has-container file-list" id="file-list">
+                <li>Loading... -w-</li>
+            </ul>
+        </div>
+        <div class="status-bar">
+            <p class="status-bar-field" id="total-files">Total files: ...</p>
+            <p class="status-bar-field">Haiii -w-</p>
+        </div>
+    </div>
+    <script>
+        fetch("https://api.github.com/repos/nixpanqueca/AboutNix/contents/assets?ref=main")
+            .then(response => {
+                if (!response.ok) throw new Error('GitHub API error');
+                return response.json();
+            })
+            .then(files => {
+                const list = document.getElementById('file-list');
+                list.innerHTML = '';
+                const onlyFiles = files
+                    .filter(f => f.type === 'file' && f.name !== 'index.html')
+                    .sort((a, b) => a.name.localeCompare(b.name));
+                onlyFiles.forEach(f => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = './' + encodeURIComponent(f.name);
+                    a.textContent = f.name;
+                    li.appendChild(a);
+                    list.appendChild(li);
+                });
+                document.getElementById('total-files').textContent = 'Total files: ' + onlyFiles.length;
+            })
+            .catch(error => {
+                console.error('Error loading assets:', error);
+                document.getElementById('file-list').innerHTML = '<li>Failed to load file list :c (GitHub API rate limit?)</li>';
+                document.getElementById('total-files').textContent = 'Total files: ?';
+            });
+    </script>
+</body>
+</html>

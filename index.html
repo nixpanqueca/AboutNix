@@ -58,6 +58,28 @@
         .black-link a:hover {
             color: white;
         }
+        .clippy-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 175px;
+            z-index: 9999;
+            margin: 0;
+        }
+        .clippy-widget .window-body {
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .clippy-widget img {
+            width: 105px;
+            height: 105px;
+            object-fit: contain;
+            cursor: pointer;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
         .rainbow h1 {
             animation: rgbText 5s infinite linear;
         }
@@ -222,7 +244,7 @@
                                 </div>
                             </div>
                             <div class="window-body has-space black-link">
-                                <img width="408" height="408" alt="Nix" src="https://camo.githubusercontent.com/4d4ac9d6c7b9e6bc4b225214c14492330a163e4d393ddeb97d2f1757e1adcdb3/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d3135435973476a5a30505456422d397765414648562d697063792d796d5a6f6477">
+                                <img id="nixcat-img" width="408" height="408" alt="Nix" style="cursor: pointer;" src="https://camo.githubusercontent.com/4d4ac9d6c7b9e6bc4b225214c14492330a163e4d393ddeb97d2f1757e1adcdb3/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d3135435973476a5a30505456422d397765414648562d697063792d796d5a6f6477">
                             </div>
                         </div>
                     </div>
@@ -395,6 +417,18 @@
                 </div>
             </div>
         </div>
+        <div class="window glass active clippy-widget" id="clippy">
+            <div class="title-bar">
+                <div class="title-bar-text">Clippy</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" disabled></button>
+                </div>
+            </div>
+            <div class="window-body has-space">
+                <!-- Troque o src abaixo pelo seu personagem -->
+                <img src="./assets/clippy.png" alt="Clippy placeholder" title="Haiii -w-">
+            </div>
+        </div>
         <script>
             const username = 'nixpanqueca';
             const repo = 'AboutNix';
@@ -403,6 +437,8 @@
             const urlJson = `https://githubusercontent.com/${username}/${repo}/main/commits.json`;
             
             console.log("O que voce esta fazendo aqui? tome isso como easter egg: https://youtu.be/iA9t8KXmB7g")
+
+            window.nya = () => document.body.style.transform = "rotate(180deg)";
 
             fetch("markdown/about.md")
                 .then(response => response.text())
@@ -463,6 +499,27 @@
                     btnPlay.textContent = "| | Pause";
                 }
             }
+
+            // Easter egg: 7 cliques no NixCat troca a imagem
+            let nyas = 0;
+            document.getElementById('nixcat-img').addEventListener('click', () => {
+                nyas++;
+                if (nyas === 7) {
+                    document.getElementById('nixcat-img').src = "https://github.com/nixpanqueca.png";
+                    nyas = 0;
+                }
+            });
+
+            // Easter egg: Konami code -> bsod.html
+            let konamiSeq = [];
+            const konamiCode = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+            window.addEventListener("keydown", (e) => {
+                konamiSeq.push(e.key);
+                konamiSeq = konamiSeq.slice(-konamiCode.length);
+                if (konamiSeq.join(",") === konamiCode.join(",")) {
+                    window.location.href = "bsod.html";
+                }
+            });
         </script> 
     </body>
 </html>
