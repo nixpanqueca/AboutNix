@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Code by NixxLTE -w- -->
+<!-- Code by NixPanqueca -w- -->
 <html>
     <header>
         <title>Portifolio</title>
@@ -58,6 +58,10 @@
         .black-link a:hover {
             color: white;
         }
+        .rainbow h1 {
+            animation: rgbText 5s infinite linear;
+        }
+
         .devicon-python-plain {
             font-size: 50px;
             color: #000000;
@@ -122,6 +126,13 @@
         margin-right: 15px;
         /* */
         }
+
+        @keyframes rgbText {
+            0%   { color: #ff3636; }
+            33%  { color: #48ff48; }
+            66%  { color: #4141ff; }
+            100% { color: #ff3636; }
+        }
     </style>
     <body>
         <audio autoplay loop id="background-music">
@@ -160,7 +171,9 @@
                                 <li role="menuitem" tabindex="0">Hello, World UwU</li>
                             </ul>
                             <div class="window-body has-space black-link">
-                                <h1>Haiii -w-</h1>
+                                <div class="rainbow">
+                                    <h1>Haiii -w-</h1>
+                                </div>
                                 <p>Eu sou Nix.</p><p>Um estudante de C/C++ focado em projetos linux/multiplataforma.</p>
                                 <h4>Minhas habilidades</h4>
                                 <center>
