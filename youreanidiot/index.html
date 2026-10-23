@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>you are an idiot!</title>
+    <link href="https://fonts.cdnfonts.com/css/wingdings" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, system-ui, sans-serif;
+            animation: yaai 1s steps(1, end) infinite;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .wingdings {
+            font-family: 'Wingdings', sans-serif;
+            font-size: 7rem;
+            letter-spacing: 3rem;
+            margin-top: 1rem;
+        }
+
+        @keyframes yaai {
+            0%, 49% {
+                background-color: #ffffff;
+                color: #000000;
+            }
+            50%, 100% {
+                background-color: #000000;
+                color: #ffffff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="music" src="./audio.mp3" preload="auto"></audio>
+
+    <div class="main">
+        <h2>you are an idiot!</h2>
+        <h1 class="wingdings">JJJ</h1>
+    </div>
+
+    <script>
+        const music = document.getElementById("music");
+
+        function playMusic() {
+            music.currentTime = 0;
+            music.play().catch((err) => {
+                console.log("Autoplay bloqueado pelo navegador:", err);
+            });
+        }
+
+        music.addEventListener("ended", () => {
+            setTimeout(playMusic, 1000);
+        });
+
+        window.addEventListener("load", playMusic);
+    </script>
+</body>
+</html>
