@@ -11,3 +11,5 @@
 
 - corrige o video faltando por problemas de copyright
 -# de alguma forma, depois de 20 anos, o video que eu utilizava como easter egg do meme "you are an idiot" foi derrubado por questoes de copyright. Neste update, ele foi substituido pelo meu proprio reupload (como video nao listado)
+
+- a tela de 404 agora e um BSOD
