@@ -2,7 +2,7 @@
 <!-- Code by NixPanqueca -w- -->
 <html>
     <header>
-        <title>Portifolio</title>
+        <title>NyanNix Portifolio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/index.css">
@@ -80,10 +80,64 @@
             image-rendering: pixelated;
             image-rendering: crisp-edges;
         }
-        .rainbow h1 {
+        .rainbow {
             animation: rgbText 5s infinite linear;
         }
+        .projectlist {
+            gap: 5px;
+        }
 
+        .technology {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50px;
+            margin-right: 2px;
+            margin-left: 5px;
+            /* margin-bottom: 5px; */
+        }
+        /* .text text {
+            margin-bottom: 5px !important;
+        } */
+        .python {
+            background-color: #3572a5;
+        }
+        .csharp {
+            background-color: #7355DD;
+        }
+        .makefile {
+            background-color: #427819;
+        }
+        .assembly {
+            background-color: #6e4c13;
+        }
+        .c {
+            background-color: #555555;
+        }
+        .html {
+            background-color: #ff5733;
+        }
+        .css {
+            background-color: #6a0dad;
+        }
+        .js {
+            background-color: #f7df1e;
+        }
+        .shell {
+            background-color: #89e051;
+        }
+        .cpp {
+            background-color: #f34b7d;
+        }
+        .cmake {
+            background-color: #da3434;
+        }
+        .pascal {
+            background-color: #e3f171;
+        }
+        .other {
+            background-color: #000000;
+        }
         .devicon-python-plain {
             font-size: 50px;
             color: #000000;
@@ -173,7 +227,7 @@
             <div class="master">
                 <div class="row1">
                     <div>
-                        <div class="window glass active" id="introduction" style="max-width: 680px; min-height: 408; max-height: 408; --w7-w-bg: #7cc0ff5f;">
+                        <div class="window glass active" id="introduction" style="max-width: 680px; min-height: 408; max-height: 408; --w7-w-bg: #7cc0ff5f;"> <!-- main window -->
                             <div class="title-bar">
                                 <div class="title-bar-text">Nix Panqueca - portifolio</div>
                                 <div class="title-bar-controls">
@@ -231,7 +285,7 @@
                                     discord e telegram: @nixpanqueca
                                     </p>
                                 </div>
-                                <h4>Feito por RushGD (aka Nix Panqueca) -w- Utilizando HTML CSS JS e 7.css</h4></center>
+                                <h4>Feito por NixPanqueca -w- Utilizando HTML CSS JS e 7.css</h4></center>
                             </div>
                             <div class="status-bar">
                                 <p class="status-bar-field">Active</p>
@@ -242,15 +296,15 @@
                         </div>
                     </div>
                     <div>
-                        <div class="window glass active" id="picture" style="max-width: 640px; min-height: 408; max-height: 408; --w7-w-bg: #7cc0ff5f;">
+                        <div class="window glass active" id="picture" style="max-width: 640px; min-height: 408; max-height: 408; --w7-w-bg: #7cc0ff5f;"> <!-- picture -->
                             <div class="title-bar">
-                                <div class="title-bar-text">NixCat</div>
+                                <div class="title-bar-text">NixBunny</div>
                                 <div class="title-bar-controls">
                                     <button aria-label="Close" disabled></button>
                                 </div>
                             </div>
                             <div class="window-body has-space black-link">
-                                <img id="nixcat-img" width="408" height="408" alt="Nix" style="cursor: pointer;" src="https://camo.githubusercontent.com/4d4ac9d6c7b9e6bc4b225214c14492330a163e4d393ddeb97d2f1757e1adcdb3/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d3135435973476a5a30505456422d397765414648562d697063792d796d5a6f6477">
+                                <img id="nixcat-img" width="408" height="408" alt="Nix" style="cursor: pointer;" src="./assets/image.png">
                             </div>
                         </div>
                     </div>
@@ -258,7 +312,7 @@
                         
                     </div>
                 </div>
-                <center><div class="window glass player" id="player" style="max-width: 300px; --w7-w-bg: #7cc0ff5f;">
+                <center><div class="window glass player" id="player" style="max-width: 300px; --w7-w-bg: #7cc0ff5f;"> <!-- music player -->
                     <div class="title-bar">
                         <div class="title-bar-text">Music Player</div>
                         <div class="title-bar-controls">
@@ -281,7 +335,7 @@
                         </div>
                     </div>
                 </div></center>
-                <div class="window glass" id="projects" style="max-width: 1050px; --w7-w-bg: #7cc0ff5f;">
+                <div class="window glass" id="projects" style="max-width: 1050px; --w7-w-bg: #7cc0ff5f;"> <!-- projetos -->
                     <div class="title-bar">
                         <div class="title-bar-text" id="projects">Portifolio - Projetos</div>
                         <div class="title-bar-controls">
@@ -294,48 +348,54 @@
                         <div>
                             <fieldset class="project">
                                 <legend>NixPanqueca</legend>
-                                <ul class="tree-view has-container" id="STR">
-                                    <h3>STR cpu</h3>
-                                    <h4>Uma CPU baseada no Intel 8086</h4>
-                                    <p>
-                                        Uma CPU virtual feita em C# e que roda uma versao modificada do Assembly 8086
-                                        <em>
-                                            Codigo fonte da CPU feito por <a href="https://github.com/raicethedev">Raic.e</a>
-                                        </em>
-                                        <br>
-                                        <em>
-                                            Codigo fonte do compilador Assembly feito por
-                                            <a href="https://github.com/nixxlte">NixxLTE</a>
-                                        </em>
-                                    </p>
-                                    <a href="https://github.com/nixxlte/STR"><button style="margin-bottom: 10px;">Ver no Github</button></a>
-                                </ul>
                                 <ul class="tree-view has-container" id="zip2IMG">
                                     <h3>zip2IMG</h3>
                                     <h4>Um utilitario feito para extrair a system.img de um arquivo OTA android.zip</h4>
                                     <p>
                                         Ele usa C++ e varios utilitarios do sistema e do Android para fazer isso da forma mais facil possivel
                                     </p>
-                                    <a href="https://github.com/nixxlte/zip2IMG"><button style="margin-bottom: 10px;">Ver no Github</button></a>
+                                    <a href="https://github.com/nixpanqueca/zip2IMG"><button style="margin-bottom: 10px;">Ver no Github</button></a>     
+                                    <span class="technology cpp"></span>
+                                    <span class="text">C++ (28.6%)</span>
+                                    <span class="technology makefile"></span>
+                                    <span class="text">makefile (26.7)</span>
+                                    <span class="technology c"></span>
+                                    <span class="text">C (25.8%) <br></span>
+                                    <span class="technology cmake"></span>
+                                    <span class="text">CMake (17.8%)</span>
                                 </ul>
-                                <ul class="tree-view has-container" id="Phantom">
-                                    <h3>PhantomLIB</h3>
-                                    <h4>Uma biblioteca de interface grafica para linux</h4>
+                                <ul class="tree-view has-container" id="STR">
+                                    <h3>STR cpu</h3>
+                                    <h4>Uma CPU baseada no Intel 8086</h4>
                                     <p>
-                                        Essa biblioteca tenta simplificar a criacao de janelas usando C++
+                                        Uma CPU virtual feita em C# e que roda uma versao modificada do Assembly 8086 <br>
                                         <em>
-                                            Codigo fonte feito por <a href="https://github.com/raicethedev">Raic.e</a>
+                                            Codigo fonte da CPU feito por <a href="https://github.com/raicethedev">Raic.e</a>
+                                        </em>
+                                        <br>
+                                        <em>
+                                            Codigo fonte do compilador Assembly feito por
+                                            <a href="https://github.com/nixpanqueca">NixPanqueca</a>
                                         </em>
                                     </p>
-                                    <a href="https://github.com/nixxlte/Phantom"><button style="margin-bottom: 10px;">Ver no Github</button></a>
+                                    <a href="https://github.com/nixpanqueca/STR"><button style="margin-bottom: 10px;">Ver no Github</button></a>
+                                    <span class="technology csharp"></span>
+                                    <span class="text">C# (99.3%)</span>
+                                    <span class="technology assembly"></span>
+                                    <span class="text">Assembly (0.7%)</span>
                                 </ul>
-                                <ul class="tree-view has-container" id="LunarOS">
-                                    <h3>LunarOS</h3>
-                                    <h4>Um OS simples feito em Assembly</h4>
-                                    <p>
-                                        *O projeto está com o desenvolvimento parado por enquanto porque o codigo esta muito quebrado
-                                    </p>
-                                    <a href="https://github.com/nixxlte/LunarOS"><button style="margin-bottom: 10px;">Ver no Github</button></a>
+                                <ul class="tree-view has-container" id="Quartz">
+                                    <h3>Quartz kernel</h3>
+                                    <h4>kernel em C muito inspirado pelo Macintosh System Software</h4>
+                                    <a href="https://github.com/nixpanqueca/quartz"><button style="margin-bottom: 10px;">Ver no Github</button></a>
+                                    <span class="technology c"></span>
+                                    <span class="text">C (91.5%)</span>
+                                    <span class="technology makefile"></span>
+                                    <span class="text">Makefile (3.4%)</span>
+                                    <span class="technology assembly"></span>
+                                    <span class="text">Assembly (2.2%)<br></span>
+                                    <span class="technology other"></span>
+                                    <span class="text">Other (2.9%)</span>
                                 </ul>
                                 <ul class="tree-view has-container" id="VICE">
                                     <h3>VICE</h3>
@@ -344,6 +404,8 @@
                                         Um framework para desenvolvimento de jogos que é feito em Pascal/Delphi
                                     </p>
                                     <a href="https://github.com/nixxlte/vice"><button style="margin-bottom: 10px;">Ver no Github</button></a>
+                                    <span class="technology pascal"></span>
+                                    <span class="text">Pascal (100%)</span>
                                 </ul>
                                 <ul class="tree-view has-container" id="Extera">
                                     <h3>Nix's portifolio</h3>
@@ -352,6 +414,12 @@
                                         Essa e a versao que vai para o Vercel e que junta a versao atual do site e a versao legacy
                                     </p>
                                     <a href="https://github.com/nixxlte/AboutNix"><button style="margin-bottom: 10px;">Ver no Github</button></a>
+                                    <span class="technology html"></span>
+                                    <span class="text">HTML (84.8%)</span>
+                                    <span class="technology css"></span>
+                                    <span class="text">CSS (8.9%)</span>
+                                    <span class="technology js"></span>
+                                    <span class="text">JavaScript (6.3%)</span>
                                 </ul>
                             </fieldset>
                         </div>
@@ -365,13 +433,19 @@
                                         Distribuicao baseada em Debian e tambem focada em fazer a criacao de UIs em Qt mais facil
                                         <br>
                                         <em>
-                                            Codigo fonte por <a href="https://github.com/nixxlte"> NixxLTE</a>
+                                            Codigo fonte por <a href="https://github.com/nixpanqueca"> NixPanqueca</a>
                                             e
                                             <a href="https://github.com/lesano"> Lesano</a>
                                         </em>
                                     </p>
                                     <a href="https://github.com/nixxlte/Pixel-linux/Pixel-linux"><button style="margin-bottom: 10px;">Ver no Github</button></a>
                                     <a href="/pixel/"><button style="margin-bottom: 10px; margin-left: 10px;">Pagina dedicada</button></a>
+                                    <span class="technology shell"></span>
+                                    <span class="text">Shell (62.6%)</span>
+                                    <span class="technology cpp"></span>
+                                    <span class="text">C++ (28.3%)<br></span>
+                                    <span class="technology cmake"></span>
+                                    <span class="text">CMake (9.1%)</span>
                                 </ul>
                                 <ul class="tree-view has-container" id="NX">
                                     <h3>NX-utility</h3>
@@ -380,6 +454,10 @@
                                         Ele utiliza uma interdace CLI simplificada, pensada para que o processo seja o mais simples possivel
                                     </p>
                                     <a href="https://github.com/nixxlte/Pixel-linux/NX-utility"><button style="margin-bottom: 10px;">Ver no Github</button></a>
+                                    <span class="technology cpp"></span>
+                                    <span class="text">C++ (86.6%)</span>
+                                    <span class="technology cmake"></span>
+                                    <span class="text">CMake (13.4%)</span>
                                 </ul>
                                 <ul class="tree-view has-container" id="PixelSDK">
                                     <h3>PixelSDK</h3>
@@ -388,19 +466,21 @@
                                         *O projeto está com o desenvolvimento meio parado porque eu estou focando mais em C++
                                     </p>
                                     <a href="https://github.com/nixxlte/Pixel-linux/PixelSDK"><button style="margin-bottom: 10px;">Ver no Github</button></a>
+                                    <span class="technology csharp"></span>
+                                    <span class="text">Shell (100%)</span>
                                 </ul>
                             </fieldset>
                         </div>
                     </div>
                     <div class="status-bar">
-                        <p class="status-bar-field">Total projects: 27</p>
+                        <p class="status-bar-field">Total projects: 31</p>
                         <p class="status-bar-field">Commits this year: <span id="Commits"></span></p>
                         <p class="status-bar-field">Useful projects: 3</p>
                         <p class="status-bar-field">People helping me: 3</p>
                         <p class="status-bar-field">Uptime: 2 years</p>
                     </div>
                 </div>
-                <div class="window glass" id="about" style="--w7-w-bg: #7cc0ff5f;">
+                <div class="window glass" id="about" style="--w7-w-bg: #7cc0ff5f;"> <!-- about -->
                     <div class="title-bar">
                         <div class="title-bar-text">About - Nix</div>
                         <div class="title-bar-controls">
@@ -417,8 +497,11 @@
                         <h5 style="margin-left: 20px;">
                             Musica que toca no Website: The Angel (A Story in 15 Parts) de "Cacola"
                             <br>
-                            Arte do icone do site: <a href="https://www.youtube.com/@tomjrXXDD">Kleiton Junior</a>
+                            Arte do icone do site: <a href="https://www.youtube.com/@tomjrXXDD">tomjrXXDD</a>
                         </h5>
+                        <p style="margin-left: 20px;">
+                           Este e o <span class="rainbow">November update</span> do site. <u class="rainbow"><a class="rainbow">Clique aqui</a></u> para ver o changelog desta versao.
+                        </p>
                         <div class="innerlines">
                             <a href="./youreanidiot/index.html">Don't click me!</a>
                         </div>
@@ -426,7 +509,7 @@
                 </div>
             </div>
         </div>
-        <div class="window glass active clippy-widget" id="clippy">
+        <div class="window glass active clippy-widget" id="clippy"> <!-- clippy -->
             <div class="title-bar">
                 <div class="title-bar-text">Clippy</div>
                 <div class="title-bar-controls">
