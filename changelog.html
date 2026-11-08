@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!-- Code by NixPanqueca -w- -->
+<html>
+    <head>
+        <title>NyanNix - Changelog</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- <link rel="stylesheet" href="./css/7.css"> -->
+        <link rel="stylesheet" href="https://unpkg.com/7.css">
+        <link rel="icon" href="./assets/favicon.png" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="./js/main.js"></script>
+    </head>
+    <style>
+        .window {
+            margin-bottom: 45px;
+            margin-right: 20px;
+        }
+        .project {
+            display: flex;
+            margin-right: 20px;
+        }
+        .row1 {
+            display: flex;
+            flex-direction: row;
+        }
+        .skill {
+            margin-bottom: 50px;
+        }
+        .footer {
+            margin-top: 50px;
+        }
+        .projectlist {
+            display: flex;
+            flex-direction: row;
+        }
+        .player {
+            align-items: center;
+        }
+        body {
+            background-image: url('assets/background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            background-position: center;
+            padding-top: 30px;
+            padding-left: 40px;
+            background-attachment: fixed;
+        }
+        .black-link a {
+            color: black;
+            /* padding: .2em .5em; */
+        }
+        .black-link a:hover {
+            color: white;
+        }
+        .clippy-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 175px;
+            z-index: 9999;
+            margin: 0;
+        }
+        .clippy-widget .window-body {
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .clippy-widget img {
+            width: 105px;
+            height: 105px;
+            object-fit: contain;
+            cursor: pointer;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+        .rainbow {
+            animation: rgbText 5s infinite linear;
+        }
+        .projectlist {
+            gap: 5px;
+        }
+
+        .technology {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50px;
+            margin-right: 2px;
+            margin-left: 5px;
+            /* margin-bottom: 5px; */
+        }
+        /* .text text {
+            margin-bottom: 5px !important;
+        } */
+        .python {
+            background-color: #3572a5;
+        }
+        .csharp {
+            background-color: #7355DD;
+        }
+        .makefile {
+            background-color: #427819;
+        }
+        .assembly {
+            background-color: #6e4c13;
+        }
+        .c {
+            background-color: #555555;
+        }
+        .html {
+            background-color: #ff5733;
+        }
+        .css {
+            background-color: #6a0dad;
+        }
+        .js {
+            background-color: #f7df1e;
+        }
+        .shell {
+            background-color: #89e051;
+        }
+        .cpp {
+            background-color: #f34b7d;
+        }
+        .cmake {
+            background-color: #da3434;
+        }
+        .pascal {
+            background-color: #e3f171;
+        }
+        .other {
+            background-color: #000000;
+        }
+        .devicon-python-plain {
+            font-size: 50px;
+            color: #000000;
+            margin-right: 15px;
+            /* */
+        }
+        .devicon-csharp-plain {
+            font-size: 50px;
+            color: #000000;
+            margin-right: 15px;
+            /* */
+        }
+        .devicon-c-plain {
+            font-size: 50px;
+            color: #000000;
+            margin-right: 15px;
+            /* */
+        }
+        .devicon-cplusplus-plain {
+            font-size: 50px;
+            color: #000000;
+            margin-right: 15px;
+            /* */
+        }
+        .devicon-git-plain {
+            font-size: 50px;
+            color: #000000;
+            margin-right: 15px;
+            /* */
+        }
+        .devicon-github-plain {
+            font-size: 50px;
+            color: #000000;
+            margin-right: 15px;
+            /* */
+        }
+        .devicon-visualstudio-plain {
+            font-size: 50px;
+            color: #000000;
+            margin-right: 15px;
+        }
+        .devicon-vscode-plain {
+            font-size: 50px;
+            color: #000000;
+            margin-right: 15px;
+        }
+        .devicon-linux-plain {
+        font-size: 50px;
+        color: #000000;
+        margin-right: 15px;
+        /* */
+        }
+        .devicon-markdown-plain {
+        font-size: 50px;
+        color: #000000;
+        margin-right: 15px;
+        /* */
+        }
+        .devicon-ubuntu-plain {
+        font-size: 50px;
+        color: #000000;
+        margin-right: 15px;
+        /* */
+        }
+
+        .innerlines a {
+            font-size: 0.5rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        @keyframes rgbText {
+            0%   { color: #ff3636; }
+            33%  { color: #48ff48; }
+            66%  { color: #4141ff; }
+            100% { color: #ff3636; }
+        }
+    </style>
+    <body>
+        <div class="window glass active" style="min-height: 408; max-height: 408; --w7-w-bg: #7cc0ff5f;">
+            <div class="title-bar" style="background-attachment: local;">
+                <div class="title-bar-text">Nyannix - Changelog</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" onclick="location.href='/'"></button>
+                </div>
+            </div>
+            <div class="window-body has-space">
+                <ul class="tree-view has-container">
+                    <div class="text" id="changelog">
+                </ul>
+            </div>
+        </div>
+        <script>
+            fetch("./changelog.md")
+            .then(response => response.text())
+            .then(text => {
+            document.getElementById("changelog").innerHTML = marked.parse(text);
+            });
+        </script>
+    </body>
+</html>
