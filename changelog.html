@@ -51,6 +51,9 @@
             padding-left: 40px;
             background-attachment: fixed;
         }
+        #changelog strong {
+            animation: rgbText 5s infinite linear;
+        }
         .black-link a {
             color: black;
             /* padding: .2em .5em; */
@@ -217,7 +220,7 @@
         }
     </style>
     <body>
-        <div class="window glass active" style="min-height: 408; max-height: 408; --w7-w-bg: #7cc0ff5f;">
+        <div class="window glass active" style="min-height: 408; max-height: 95%; --w7-w-bg: #ffffff40;">
             <div class="title-bar" style="background-attachment: local;">
                 <div class="title-bar-text">Nyannix - Changelog</div>
                 <div class="title-bar-controls">
@@ -228,6 +231,17 @@
                 <ul class="tree-view has-container">
                     <div class="text" id="changelog">
                 </ul>
+            </div>
+        </div>
+        <div class="window glass active clippy-widget" id="clippy" style="--w7-w-bg: #ffffff40;"> <!-- clippy -->
+            <div class="title-bar">
+                <div class="title-bar-text">Clippy</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" onclick="location.href='https://youtu.be/5PmjjOwZTcw?si=AXVAkjI5pAlZU02v&t=24'"></button>
+                </div>
+            </div>
+            <div class="window-body has-space">
+                <img src="./assets/clippy.png" alt="Clippy cat edition" title="Haiii -w-">
             </div>
         </div>
         <script>
