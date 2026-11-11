@@ -5,7 +5,7 @@
         <title>NyanNix Portifolio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/index.css">
+        <!-- <link rel="stylesheet" href="./css/index.css"> -->
         <!-- <link rel="stylesheet" href="./css/7.css"> -->
         <link rel="stylesheet" href="https://unpkg.com/7.css">
         <link rel="icon" href="./assets/favicon.png" type="image/png">
@@ -64,6 +64,14 @@
             right: 30px;
             width: 175px;
             z-index: 9999;
+            margin: 0;
+        }
+        .clippy-balloon {
+            position: fixed;
+            bottom: 220px;
+            right: 225px;
+            width: 175px;
+            z-index: 9998;
             margin: 0;
         }
         .clippy-widget .window-body {
@@ -207,6 +215,10 @@
             font-size: 0.5rem;
             color: white;
             text-decoration: none;
+        }
+
+        .hidden {
+            display: none;
         }
 
         @keyframes rgbText {
@@ -547,6 +559,9 @@
                 </div>
             </div>
         </div>
+        <div class="clippy-balloon is-top is-left hidden" id="clippy-balloon" role="tooltip">
+            <p id="clippy-text">Meow</p>
+        </div>
         <div class="window glass active clippy-widget" id="clippy" style="--w7-w-bg: #ffffff40;"> <!-- "clippy" surface cat actually -->
             <div class="title-bar">
                 <div class="title-bar-text">Clippy</div>
@@ -554,7 +569,7 @@
                     <button aria-label="Close" onclick="location.href='https://youtu.be/5PmjjOwZTcw?si=AXVAkjI5pAlZU02v&t=24'"></button>
                 </div>
             </div>
-            <div class="window-body has-space">
+            <div class="window-body has-space" onclick="clippy();">
                 <img src="./assets/clippy.png" alt="Clippy cat edition" title="Haiii -w-">
             </div>
         </div>
@@ -563,9 +578,11 @@
             const repo = 'AboutNix';
             var times = 0;
         
-            const urlJson = `https://githubusercontent.com/${username}/${repo}/main/commits.json`;
+            const urlJson = `https://nyannixcanary.vercel.app/commits.json`;
             
             console.log("O que voce esta fazendo aqui? tome isso como easter egg: https://youtu.be/iA9t8KXmB7g")
+
+            document.getElementById("clippy-baloon").style.display = "none";
 
             window.nya = () => document.body.style.transform = "rotate(180deg)";
 
@@ -649,6 +666,16 @@
                     window.location.href = "bsod.html";
                 }
             });
+
+            function clippy() {
+                const balloon = document.getElementById("clippy-balloon");
+
+                if (balloon.style.display === "none") {
+                    balloon.style.display = "block";
+                } else {
+                    balloon.style.display = "none";
+                }
+            }
         </script> 
     </body>
 </html>
