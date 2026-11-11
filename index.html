@@ -71,7 +71,7 @@
             bottom: 220px;
             right: 225px;
             width: 175px;
-            z-index: 9998;
+            z-index: 9999;
             margin: 0;
         }
         .clippy-widget .window-body {
@@ -338,8 +338,8 @@
                     </div>
                     <div class="window-body has-space black-link">
                         <div style="display: flex; flex-direction: row; margin-left: 4px; margin-top: 4px;">
-                            <img width="50" src="./assets/TheAngel.jpg">
-                            <h3 style="margin-left: 15px;">
+                            <img width="50" id="player-currentplaying-image" src="./assets/TheAngel.jpg">
+                            <h3 style="margin-left: 15px;" id="player-currentplaying-text">
                                 The Angel
                             </h3>
                         </div>
@@ -580,7 +580,7 @@
         
             const urlJson = `https://nyannixcanary.vercel.app/commits.json`;
             
-            console.log("O que voce esta fazendo aqui? tome isso como easter egg: https://youtu.be/iA9t8KXmB7g")
+            console.log("O que voce esta fazendo aqui? tome isso como easter egg: https://youtu.be/iA9t8KXmB7g");
 
             window.nya = () => document.body.style.transform = "rotate(180deg)";
 
@@ -589,8 +589,6 @@
                 .then(text => {
                 document.getElementById("about-txt").innerHTML = marked.parse(text);
             });
-
-            document.getElementById("clippy-baloon").style.display = "none";
 
             fetch(urlJson)
                 .then(response => {
@@ -619,12 +617,17 @@
 
             function togglePlay() {
                 if (audio.paused) {
-                    if (times < 10) {audio.play();}
-                    if (times >= 10) {EGaudio.play(); audio.pause();}
+                    if (times < 20) {
+                        audio.play(); 
+                        document.getElementById("player-currentplaying-text").textContent = "The Angel";
+                    }
+                    if (times >= 20) {
+                        EGaudio.play(); audio.pause(); 
+                        document.getElementById("player-currentplaying-text").textContent = "Never Gonna Give You Up";}
                     btnPlay.textContent = "| | Pause";
                 } else {
-                    if (times < 10) {audio.pause();}
-                    if (times >= 10) {EGaudio.pause();}
+                    if (times < 20) {audio.pause(); document.getElementById("player-currentplaying-text").textContent = "The Angel";}
+                    if (times >= 20) {EGaudio.pause(); document.getElementById("player-currentplaying-text").textContent = "Never Gonna Give You Up";}
                     btnPlay.textContent = "▶ Play";
                 }
             }
@@ -633,6 +636,8 @@
                 EGaudio.pause();
                 times = 0;
                 audio.play();
+                document.getElementById("player-currentplaying-text").textContent = "The Angel";
+                document.getElementById("player-currentplaying-image").src = "./assets/TheAngel.jpg";
                 btnPlay.textContent = "| | Pause";
             }
             function nextsong() {
@@ -642,6 +647,8 @@
                     EGaudio.currentTime = 0;
                     audio.pause();
                     EGaudio.play();
+                    document.getElementById("player-currentplaying-text").textContent = "Never Gonna Give You Up";
+                    document.getElementById("player-currentplaying-image").src = "./assets/Egg.jpg";
                     btnPlay.textContent = "| | Pause";
                 }
             }
