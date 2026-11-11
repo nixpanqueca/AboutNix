@@ -22,4 +22,7 @@
  voce pode ver uma representacao de quantos % eu considero cada projeto pronto <br>  
 
 ### Wayback Machine
- a partir do **October update** todos os updates do site vao ter pelo menos 1 snapshot no Wayback Machine
+ a partir do **October update** todos os updates do site vao ter pelo menos 1 snapshot no Wayback Machine <br>  
+
+### Adicionada funcao para o clippy
+ ele e irritante, mas nao te irrita (ainda)

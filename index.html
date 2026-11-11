@@ -582,8 +582,6 @@
             
             console.log("O que voce esta fazendo aqui? tome isso como easter egg: https://youtu.be/iA9t8KXmB7g")
 
-            document.getElementById("clippy-baloon").style.display = "none";
-
             window.nya = () => document.body.style.transform = "rotate(180deg)";
 
             fetch("markdown/about.md")
@@ -591,6 +589,8 @@
                 .then(text => {
                 document.getElementById("about-txt").innerHTML = marked.parse(text);
             });
+
+            document.getElementById("clippy-baloon").style.display = "none";
 
             fetch(urlJson)
                 .then(response => {
